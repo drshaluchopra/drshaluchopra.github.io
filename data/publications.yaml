@@ -1,0 +1,62 @@
+# Journal publications. Add a new paper = append one block.
+- title: "Fake Viral Videos: The Delusion of Infotainment"
+  order: 1
+  authors: "Shalu Chopra, Manish Verma"
+  venue: "IIS University Journal of Arts"
+  volume: "11(4)"
+  pages: "242–255"
+  year: 2023
+  issn: "2319-5339"
+  note: "UGC-approved"
+  scopus: false
+  abstract: "Examines fake viral videos as an information-warfare tool. It shows how misinformation and deepfakes manipulate social-media users, blurring real and fake and fuelling social harm and violence, and analyses user behaviour across categories of fake content."
+  url: "https://iisjoa.org/sites/default/files/iisjoa/April%202023/21.pdf"
+  links:
+    - { label: "PDF", url: "https://iisjoa.org/sites/default/files/iisjoa/April%202023/21.pdf" }
+    - { label: "ResearchGate", url: "https://www.researchgate.net/publication/371686663_Fake_Viral_Videos_The_Delusion_of_Infotainment" }
+
+- title: "A Comparative Analysis of the Factors Affecting Happiness Index"
+  order: 2
+  authors: "Parul Oberoi, Shalu Chopra, Yukti Seth"
+  venue: "International Journal of Scientific & Technology Research (IJSTR)"
+  volume: "9(3)"
+  pages: "1671–"
+  year: 2020
+  issn: "2277-8616"
+  note: "Scopus-indexed"
+  scopus: true
+  abstract: "Analyses the Happiness Index (originating in Bhutan's Gross National Happiness, later adopted by the UN) against demographic factors such as age, gender, income, occupation, and marital status, using survey method with ANOVA and multiple regression."
+  url: "https://www.academia.edu/84490969/A_Comparative_Analysis_Of_The_Factors_Affecting_Happiness_Index"
+  links:
+    - { label: "Read", url: "https://www.academia.edu/84490969/A_Comparative_Analysis_Of_The_Factors_Affecting_Happiness_Index" }
+
+- title: "Photography: An Expression of Ethnography"
+  order: 3
+  authors: "Shalu Chopra"
+  venue: "International Journal of Scientific & Technology Research (IJSTR)"
+  volume: "9(2)"
+  pages: ""
+  year: 2020
+  issn: "2277-8616"
+  note: "Scopus-indexed"
+  scopus: true
+  abstract: "Explores photography as an ethnographic research tool: visual documentation that informs research and social change across advertising and the social sciences."
+  url: "https://www.scribd.com/document/961948636/Photography-an-Expression-of-Ethnography"
+  links:
+    - { label: "Read", url: "https://www.scribd.com/document/961948636/Photography-an-Expression-of-Ethnography" }
+
+- title: "Social Trends of Ethnographic Videography"
+  order: 4
+  authors: "Shalu Chopra, Francis Arackal"
+  venue: "International Journal of Emerging Technologies and Innovative Research (JETIR)"
+  volume: "5(11)"
+  pages: "1–9"
+  year: 2018
+  issn: "2349-5162"
+  note: "UGC-approved"
+  scopus: false
+  abstract: "Examines ethnographic videography: how it documents and portrays culture and society on social media, and the emerging trends and impacts of ethnographic video on rising generations."
+  url: "https://www.jetir.org/view?paper=JETIR1811A01"
+  links:
+    - { label: "Abstract", url: "https://www.jetir.org/view?paper=JETIR1811A01" }
+    - { label: "PDF", url: "https://www.jetir.org/papers/JETIR1811A01.pdf" }

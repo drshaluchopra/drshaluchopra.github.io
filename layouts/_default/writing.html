@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{ $articles := sort hugo.Data.articles "date" "desc" }}
+{{ $featured := index $articles 0 }}
+{{ $rest := after 1 $articles }}
+{{ $themes := slice "Media, Technology & Society" "Marketing & Storytelling" "Life & Reflection" }}
+
+<article class="page">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{{ .Params.eyebrow | default "Writing" }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lede }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+
+  <div class="wrap prose">{{ .Content }}</div>
+
+  {{/* Featured latest piece */}}
+  <section class="wrap">
+    <a class="article-feature" href="{{ $featured.url }}" target="_blank" rel="noopener">
+      <p class="feature-label">Latest piece</p>
+      {{ with $featured.topic }}<span class="topic-chip">{{ . }}</span>{{ end }}
+      <h2>{{ $featured.title }}</h2>
+      <p class="meta">{{ $featured.outlet }} · {{ dateFormat "2 Jan 2006" $featured.date }}</p>
+      <p class="blurb">{{ $featured.blurb }}</p>
+      <span class="read-more">Read on The Present Minds →</span>
+    </a>
+  </section>
+
+  {{/* Grouped by theme */}}
+  <section class="wrap">
+    {{ range $themes }}
+    {{ $t := . }}
+    {{ $items := where $rest "theme" $t }}
+    {{ with $items }}
+    <div class="theme-group">
+      <h2 class="theme-head">{{ $t }}</h2>
+      <ul class="article-list article-list-full">
+        {{ range . }}
+        <li class="article-item">
+          <a href="{{ .url }}" target="_blank" rel="noopener">
+            <p class="meta">{{ with .topic }}<span class="topic-chip topic-chip-sm">{{ . }}</span>{{ end }} {{ .outlet }} · {{ dateFormat "2 Jan 2006" .date }}</p>
+            <h3>{{ .title }}</h3>
+            <p class="blurb">{{ .blurb }}</p>
+            <span class="read-more">Read on The Present Minds →</span>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
+  </section>
+
+  {{/* Follow nudge */}}
+  <section class="wrap writing-follow">
+    <p>Read the full column, updated regularly, on The Present Minds.</p>
+    <a class="btn btn-outline" href="https://thepresentminds.org/category/the-prism/" target="_blank" rel="noopener">Visit the Prism column →</a>
+  </section>
+</article>
+{{ end }}

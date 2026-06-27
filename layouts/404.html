@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="band band-404">
+  <div class="wrap notfound">
+    <p class="eyebrow">Error 404</p>
+    <h1>This page could not be found</h1>
+    <p class="lead">The link may be broken, or the page may have moved.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="{{ "" | relURL }}">Back to home</a>
+      <a class="btn btn-outline" href="{{ "research/" | relURL }}">View research</a>
+    </div>
+  </div>
+</section>
+{{ end }}

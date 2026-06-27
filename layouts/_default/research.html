@@ -1,0 +1,54 @@
+{{ define "main" }}
+<article class="page">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{{ .Params.eyebrow | default "Research" }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lede }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+
+  <div class="wrap prose">{{ .Content }}</div>
+
+  {{/* Publications */}}
+  <section class="wrap">
+    <div class="section-head"><h2>Publications</h2></div>
+    <ol class="pub-list pub-list-full">
+      {{ range sort hugo.Data.publications "order" "asc" }}
+      <li class="pub-item">
+        <p class="pub-title">{{ .title }}</p>
+        <p class="pub-meta">{{ .authors }}. <span class="venue">{{ .venue }}</span>{{ with .volume }}, {{ . }}{{ end }}{{ with .pages }}, pp.&nbsp;{{ . }}{{ end }} ({{ .year }}).{{ with .issn }} ISSN&nbsp;{{ . }}.{{ end }}{{ if .scopus }} <span class="tag">Scopus</span>{{ else if .note }} <span class="tag tag-soft">{{ .note }}</span>{{ end }}</p>
+        {{ with .abstract }}<p class="pub-abs">{{ . }}</p>{{ end }}
+        {{ with .links }}<p class="pub-links">{{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>{{ end }}</p>{{ end }}
+      </li>
+      {{ end }}
+    </ol>
+    <p class="muted">Full list also on <a href="{{ site.Params.orcid }}" target="_blank" rel="noopener">ORCID</a>.</p>
+  </section>
+
+  {{/* PhD thesis */}}
+  {{ with .Params.thesis }}
+  <section class="band band-warm thesis-band">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">Doctoral research</p><h2>PhD Thesis</h2></div>
+      <p class="thesis-title"><em>{{ .title }}</em></p>
+      <p class="thesis-meta">{{ .institution }} · {{ .year }}{{ with .supervisors }} · Supervisors: {{ . }}{{ end }}</p>
+      <div class="thesis-abstract">
+        {{ $abs := .abstract }}
+        <p>{{ index $abs 0 }}</p>
+        {{ if gt (len $abs) 1 }}
+        <details class="abstract-more">
+          <summary>Read the full abstract</summary>
+          {{ range after 1 $abs }}<p>{{ . }}</p>{{ end }}
+        </details>
+        {{ end }}
+      </div>
+      {{ with .keywords }}<p class="thesis-keywords"><strong>Keywords:</strong> {{ . }}</p>{{ end }}
+      <p class="pub-links">
+        {{ with .record }}<a href="{{ . }}" target="_blank" rel="noopener">Shodhganga record</a>{{ end }}
+      </p>
+    </div>
+  </section>
+  {{ end }}
+</article>
+{{ end }}

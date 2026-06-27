@@ -1,0 +1,116 @@
+{{ define "main" }}
+{{ $cv := hugo.Data.experience }}
+<article class="page">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{{ .Params.eyebrow | default "Curriculum Vitae" }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="cv-download"><a class="btn btn-primary btn-sm" href="{{ "cv.docx" | relURL }}" download>Download CV</a></p>
+    </div>
+  </header>
+
+  <div class="wrap cv">
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      {{ range $cv.education }}
+      <div class="cv-entry">
+        <div class="cv-when">{{ .dates }}</div>
+        <div class="cv-what">
+          <p class="cv-role">{{ .degree }}</p>
+          <p class="cv-org">{{ .institution }}</p>
+          {{ with .note }}<p class="cv-note">{{ . }}</p>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </section>
+
+    <section class="cv-section">
+      <h2>Academic &amp; Teaching Experience</h2>
+      {{ range $cv.experience }}
+      <div class="cv-entry">
+        <div class="cv-when">{{ .dates }}</div>
+        <div class="cv-what">
+          <p class="cv-role">{{ .role }}</p>
+          <p class="cv-org">{{ .org }}</p>
+          {{ with .points }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </section>
+
+    <section class="cv-section">
+      <h2>Industry &amp; Marketing Experience</h2>
+      {{ range $cv.industry }}
+      <div class="cv-entry">
+        <div class="cv-when">{{ .dates }}</div>
+        <div class="cv-what">
+          <p class="cv-role">{{ .role }}</p>
+          <p class="cv-org">{{ .org }}</p>
+          {{ with .points }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </section>
+
+    <section class="cv-section">
+      <h2>International &amp; Conference Roles</h2>
+      {{ range $cv.roles }}
+      <div class="cv-entry">
+        <div class="cv-when">{{ .dates }}</div>
+        <div class="cv-what">
+          <p class="cv-role">{{ .role }}</p>
+          <p class="cv-org">{{ .org }}</p>
+          {{ with .note }}<p class="cv-note">{{ . }}</p>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </section>
+
+    <section class="cv-section">
+      <h2>Publications</h2>
+      <ol class="cv-pubs">
+        {{ range sort hugo.Data.publications "order" "asc" }}
+        <li>
+          {{ .authors }}. "{{ .title }}." <em>{{ .venue }}</em>{{ with .volume }}, {{ . }}{{ end }}{{ with .pages }}, pp.&nbsp;{{ . }}{{ end }} ({{ .year }}).{{ with .issn }} ISSN&nbsp;{{ . }}.{{ end }}{{ if .scopus }} <span class="tag">Scopus</span>{{ end }}
+          {{ with .url }} <a href="{{ . }}" target="_blank" rel="noopener">[link]</a>{{ end }}
+        </li>
+        {{ end }}
+      </ol>
+    </section>
+
+    <section class="cv-section">
+      <h2>Conference Papers &amp; Presentations</h2>
+      <ul class="cv-bullets">{{ range $cv.presentations }}<li>{{ . }}</li>{{ end }}</ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Convening &amp; Academic Events</h2>
+      <ul class="cv-bullets">{{ range $cv.convening }}<li>{{ . }}</li>{{ end }}</ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Professional Development</h2>
+      <ul class="cv-bullets">{{ range $cv.professional_development }}<li>{{ . }}</li>{{ end }}</ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Earlier Media &amp; Broadcast Career</h2>
+      <ul class="cv-bullets">{{ range $cv.media_career }}<li>{{ . }}</li>{{ end }}</ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Awards &amp; Distinctions</h2>
+      <ul class="cv-bullets">{{ range $cv.awards }}<li>{{ . }}</li>{{ end }}</ul>
+    </section>
+
+    <section class="cv-section">
+      <h2>Skills</h2>
+      <dl class="cv-skills">
+        {{ range $cv.skills }}<dt>{{ .group }}</dt><dd>{{ .items }}</dd>{{ end }}
+      </dl>
+    </section>
+
+  </div>
+</article>
+{{ end }}

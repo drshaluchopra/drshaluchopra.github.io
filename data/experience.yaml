@@ -1,0 +1,110 @@
+# Structured CV data. Edit here to update the CV page.
+
+education:
+  - degree: "MSc International Marketing Management"
+    institution: "Manchester Metropolitan University, United Kingdom"
+    dates: "2025 – 2026"
+    note: "Strategic marketing, digital brand management, consumer behaviour, data analytics, creative industries, international market strategy."
+  - degree: "PhD, Journalism & Mass Communication"
+    institution: "Amity University, Gurugram, India"
+    dates: "Awarded 2024"
+    note: "Thesis: A Study to Determine the Social Impact and Credibility of Fake Viral Videos on Social Media. Methods: SPSS, NVivo, large-scale survey design, ethnographic fieldwork."
+  - degree: "MA, Journalism & Mass Communication"
+    institution: "CCS University, India"
+    dates: "2018"
+    note: "Gold Medalist, First Class with Distinction."
+  - degree: "PG Diploma, Radio & TV Production"
+    institution: "Bhartiya Vidya Bhawan, India"
+    dates: "2015"
+    note: "Ranked 2nd among Top Producers."
+  - degree: "BA, Journalism & Mass Communication"
+    institution: "GGSIPU / Fairfield Institute of Management & Technology, India"
+    dates: ""
+    note: "First Division with Distinction."
+
+experience:
+  - role: "Assistant Professor, Journalism & Mass Communication"
+    org: "Amity University, Gurugram, India"
+    dates: "2024 – 2025"
+    points:
+      - "Designed and delivered UG and PG teaching in media production, journalism, communication, branding, advertising, and public relations."
+      - "Provided academic mentoring, research supervision, and student evaluation across modules."
+      - "Contributed to departmental research culture through peer-reviewed publication and conferences."
+  - role: "Assistant Professor, Journalism & Mass Communication"
+    org: "AAFT, Asian Academy of Film & Television (Marwah Studios), India"
+    dates: "2021 – 2024"
+    points:
+      - "Taught journalism, digital media, advertising, and media studies at UG and PG level."
+      - "Top Performer Award 2024, ranked 3rd among all faculty across the institution."
+      - "Organised and chaired national academic conferences and large-scale academic events."
+  - role: "Assistant Professor & Programme Coordinator, Journalism & Mass Communication"
+    org: "KCC Institute of Legal & Higher Education, GGSIPU, India"
+    dates: "2018 – 2021"
+    points:
+      - "Delivered UG teaching achieving 100% student pass rates in all assigned modules."
+      - "Programme Coordinator (2018–2020): curriculum delivery, timetabling, academic administration."
+      - "Built partnerships with external media organisations to enhance student learning."
+  - role: "Assistant Professor, Journalism & Mass Communication"
+    org: "Fairfield Institute of Management & Technology, GGSIPU, India"
+    dates: "2017 – 2018"
+    points:
+      - "Delivered UG teaching in journalism, mass communication, and media practice."
+      - "Supported curriculum delivery, assessment, and academic mentoring."
+
+industry:
+  - role: "Brand & Marketing Manager"
+    org: "Hi-Life, KPS Sanitation Pvt. Ltd. (family-owned consumer brand), India"
+    dates: "2022 – 2026"
+    points:
+      - "Led end-to-end brand strategy and marketing for Hi-Life, the family's established consumer sanitation brand, taking ownership of its market presence."
+      - "Developed brand identity, positioning, and messaging across B2B and B2C markets."
+      - "Ran integrated campaigns across digital, print, and field promotions, and managed social media and content planning."
+      - "Partnered with the sales team on dealer-focused promotions, and conducted market research and consumer insight analysis."
+      - "Managed external vendors and ensured consistent brand representation across all channels."
+  - role: "Personality Development Trainer (Freelance)"
+    org: "Workshops & guest lectures, India"
+    dates: "2020 – 2024"
+    points:
+      - "Delivered workshops and guest lectures on personality development and communication skills."
+
+roles:
+  - role: "Country Coordinator (India)"
+    org: "World Conference on Media & Mass Communication (MEDCOM), Bangkok"
+    dates: "Ongoing"
+    note: "Represents India at international academic forums; coordinates cross-border scholarly participation and partnerships."
+
+media_career:
+  - "Hosted a news show for a YouTube news channel."
+  - "Internships across television and radio: production at Doordarshan, outside broadcasting at Red FM, and All India Radio (2013–2017)."
+  - "Earlier roles: newspaper reporter intern, freelance writer, content writer and editor, and advertising research intern."
+
+presentations:
+  - "Best Paper Presenter, TARMS International Conference."
+  - "Presenter, ICAN International Conference, 2023."
+  - "Presenter, International Conference on AI in Media & Marketing, 2020."
+  - "Presenter, MEDCOM World Conference, Bangkok."
+
+convening:
+  - "Conference Coordinator, National Conference on Social Media Algorithms & Filter Bubble: Redefining the News Landscape, AAFT, Noida (2024)."
+  - "Convened, National Conference on Emerging Trends & Innovation in IT, Management & Media."
+  - "Organising team, Media Conclave 2022, AAFT School of Journalism & Mass Communication."
+  - "Faculty lead with students at the Global Journalism Festival Noida (GJFN) and Global Film Festival Noida, AAFT, giving students hands-on event-management experience."
+  - "Mock Interview Panel, Daksham Career Accelerator Bootcamp, AAFT Career Resource Cell."
+
+professional_development:
+  - "Ongoing professional development, including IP Awareness training under the National IP Awareness Mission (NIPAM), Government of India (2023), and faculty development programmes in advertising and public relations."
+  - "65+ hours of continuous upskilling via LinkedIn Learning across research methods, digital media, marketing, analytics, and communication."
+
+awards:
+  - "Gold Medal, MA Journalism & Mass Communication (CCS University)."
+  - "Top Performer Award 2024, AAFT Marwah Studios (ranked 3rd of all faculty)."
+  - "Best Paper Presenter, TARMS International Conference."
+  - "Best Desk Production Award (D-FEET Award)."
+  - "Ranked 2nd among Top Producers, PG Diploma in Radio & TV Production."
+
+skills:
+  - { group: "Quantitative", items: "SPSS, Advanced Excel, Qualtrics" }
+  - { group: "Qualitative", items: "NVivo, ethnographic fieldwork & analysis" }
+  - { group: "Research", items: "Survey design, data interpretation, academic reporting; Mendeley, Zotero" }
+  - { group: "Production", items: "Adobe Creative Suite, Final Cut Pro" }
+  - { group: "Languages", items: "English (fluent), Hindi (native)" }

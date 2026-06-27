@@ -1,0 +1,124 @@
+{{ define "main" }}
+{{ $hero := resources.Get "images/hero.jpg" }}
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>Dr. Shalu Chopra</h1>
+      <p class="hero-statement">A scholar's mind.<br>A communicator's voice.</p>
+      <p class="hero-tagline">{{ site.Params.tagline }}</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="{{ "book/" | relURL }}">Explore the book</a>
+        <a class="btn btn-outline" href="{{ "research/" | relURL }}">View research</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      {{ with $hero }}
+      {{ $img := .Resize "760x q85" }}
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+           alt="Dr. Shalu Chopra" loading="eager" fetchpriority="high">
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* Credibility numbers */}}
+<section class="stats reveal">
+  <div class="wrap">
+    <div class="stat"><span class="num">PhD</span><span class="lbl">Journalism &amp; Mass Comm.</span></div>
+    <div class="stat"><span class="num">8+</span><span class="lbl">Years in higher education</span></div>
+    <div class="stat"><span class="num">4</span><span class="lbl">Peer-reviewed publications</span></div>
+    <div class="stat"><span class="num">470</span><span class="lbl">Doctoral study respondents</span></div>
+    <div class="stat"><span class="num">7</span><span class="lbl">Published Prism essays</span></div>
+  </div>
+</section>
+
+{{/* Institution trust row */}}
+<section class="trust reveal">
+  <div class="wrap">
+    <span>Manchester Metropolitan University</span><span class="dot">·</span>
+    <span>Amity University</span><span class="dot">·</span>
+    <span>AAFT</span><span class="dot">·</span>
+    <span>The Present Minds</span>
+  </div>
+</section>
+
+{{/* Featured book */}}
+<section class="band band-feature reveal">
+  <div class="wrap feature-book">
+    <div class="feature-book-text">
+      <p class="eyebrow">Forthcoming book</p>
+      <h2><em>Manipulative Realities</em></h2>
+      <p class="feature-sub">Viral Propaganda of Digital Deception</p>
+      <p class="lead">When seeing is no longer believing.</p>
+      <p>Fake viral videos and deepfakes have broken the link between seeing and believing. On
+         platforms with no gatekeeper, the same engine of manipulation quietly reshapes
+         entertainment, religion, and politics. The book is built on original doctoral research
+         across three generations, fifteen case studies, and interviews with senior journalists.</p>
+      <a class="btn btn-primary" href="{{ "book/" | relURL }}">Learn more</a>
+    </div>
+    <div class="feature-book-cover">
+      {{ partial "book-cover.html" . }}
+    </div>
+  </div>
+</section>
+
+{{/* Latest writing */}}
+<section class="band reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Writing</p>
+      <h2>From the <em>Prism</em> column</h2>
+    </div>
+    <ul class="article-cards">
+      {{ range first 2 (sort hugo.Data.articles "date" "desc") }}
+      <li class="article-card">
+        <a href="{{ .url }}" target="_blank" rel="noopener">
+          {{ with .image }}{{ $img := resources.Get . }}{{ with $img }}<div class="article-card-img"><img src="{{ (.Resize "640x q80").RelPermalink }}" alt="" loading="lazy"></div>{{ end }}{{ end }}
+          <div class="article-card-body">
+            <p class="meta">{{ with .topic }}<span class="topic-chip topic-chip-sm">{{ . }}</span>{{ end }} {{ .outlet }} · {{ dateFormat "2 Jan 2006" .date }}</p>
+            <h3>{{ .title }}</h3>
+            <p class="blurb">{{ .blurb }}</p>
+            <span class="read-more">Read on The Present Minds →</span>
+          </div>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    <p class="section-more"><a href="{{ "writing/" | relURL }}">All writing →</a></p>
+  </div>
+</section>
+
+{{/* Research snapshot */}}
+<section class="band band-feature reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Research</p>
+      <h2>Selected publications</h2>
+    </div>
+    <ol class="pub-list">
+      {{ range first 3 (sort hugo.Data.publications "order" "asc") }}
+      <li class="pub-item">
+        <p class="pub-title">{{ .title }}</p>
+        <p class="pub-meta">{{ .authors }}. <span class="venue">{{ .venue }}</span>{{ with .volume }}, {{ . }}{{ end }} ({{ .year }}).{{ if .scopus }} <span class="tag">Scopus</span>{{ end }}</p>
+      </li>
+      {{ end }}
+    </ol>
+    <p class="section-more"><a href="{{ "research/" | relURL }}">All research →</a></p>
+  </div>
+</section>
+
+{{/* About strip */}}
+<section class="band reveal">
+  <div class="wrap about-strip">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Research-led, public-minded</h2>
+      <p class="lead">A media and communication scholar who connects careful research with clear
+        public writing. Her work runs from peer-reviewed papers to a column read by a broad
+        audience, and a career that began in broadcast journalism.</p>
+      <a class="btn btn-outline" href="{{ "about/" | relURL }}">More about me</a>
+    </div>
+  </div>
+</section>
+{{ end }}

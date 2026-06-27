@@ -1,0 +1,69 @@
+baseURL = "https://drshaluchopra.github.io/"
+title = "Dr. Shalu Chopra"
+defaultContentLanguage = "en"
+
+[languages.en]
+  label = "English"
+  locale = "en_GB"
+enableRobotsTXT = true
+enableEmoji = true
+
+# Build hygiene
+disableKinds = ["taxonomy", "term", "RSS"]
+summaryLength = 30
+
+[params]
+  author = "Dr. Shalu Chopra"
+  description = "Dr. Shalu Chopra is a media and mass communication scholar, researcher, and columnist. PhD in Journalism & Mass Communication; MSc International Marketing Management (UK). Author of the forthcoming book Manipulative Realities."
+  tagline = "Media & Communication Scholar · Researcher · Columnist"
+  email = "130507shalu@gmail.com"
+  location = "Manchester, United Kingdom"
+  orcid = "https://orcid.org/0000-0002-2493-8621"
+  # Headline credentials shown in hero
+  credentials = "PhD, Journalism & Mass Communication · MSc International Marketing Management (UK) · Scopus-published researcher"
+  ogImage = "/images/hero.jpg"
+
+  # Optional social links (left blank until confirmed)
+  linkedin = "https://www.linkedin.com/in/shalu-chopra"
+  scholar = ""
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 20
+  [[menus.main]]
+    name = "Book"
+    pageRef = "/book"
+    weight = 30
+  [[menus.main]]
+    name = "Research"
+    pageRef = "/research"
+    weight = 40
+  [[menus.main]]
+    name = "Writing"
+    pageRef = "/writing"
+    weight = 50
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 60
+  [[menus.main]]
+    name = "CV"
+    pageRef = "/cv"
+    weight = 70
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 80
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]

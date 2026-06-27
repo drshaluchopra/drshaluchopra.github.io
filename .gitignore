@@ -1,0 +1,16 @@
+public/
+resources/_gen/
+.hugo_build.lock
+.DS_Store
+node_modules/
+
+# Internal working files — not part of the published site, kept out of the public repo
+.claude/
+CLAUDE.md
+ImportedSkills/
+DECISIONS.md
+SITE_STATE.md
+rules.md
+CONTENT_INTAKE.md
+DESIGN.md
+BOOK_COVER_BRIEF.md

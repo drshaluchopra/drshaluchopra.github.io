@@ -1,0 +1,57 @@
+{{- $desc := .Description | default .Summary | default site.Params.description | plainify | chomp -}}
+{{- $ogImage := absURL (site.Params.ogImage | default "/images/hero.jpg") -}}
+
+{{- /* Open Graph */ -}}
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}profile{{ end }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:image" content="{{ $ogImage }}">
+
+{{- /* Twitter */ -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
+
+{{- /* JSON-LD Person schema */ -}}
+{{- $sameAs := slice -}}
+{{- with site.Params.orcid }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+{{- with site.Params.linkedin }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+{{- with site.Params.scholar }}{{ $sameAs = $sameAs | append . }}{{ end -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Dr. Shalu Chopra",
+  "givenName": "Shalu",
+  "familyName": "Chopra",
+  "jobTitle": "Media & Mass Communication Scholar",
+  "description": {{ site.Params.description | jsonify }},
+  "email": "mailto:{{ site.Params.email }}",
+  "url": {{ site.BaseURL | jsonify }},
+  "image": {{ $ogImage | jsonify }},
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Amity University" },
+    { "@type": "CollegeOrUniversity", "name": "Manchester Metropolitan University" }
+  ],
+  "knowsAbout": ["Journalism", "Mass Communication", "Misinformation", "Media Literacy", "Deepfakes", "Digital Marketing", "Ethnography"],
+  "sameAs": {{ $sameAs | jsonify }}
+}
+</script>
+
+{{- /* Google Scholar citation meta tags on the Research page */ -}}
+{{- if and .File (eq .File.BaseFileName "research") -}}
+{{- range hugo.Data.publications }}
+<meta name="citation_title" content="{{ .title }}">
+{{- range split .authors ", " }}
+<meta name="citation_author" content="{{ . }}">
+{{- end }}
+<meta name="citation_journal_title" content="{{ .venue }}">
+<meta name="citation_publication_date" content="{{ .year }}">
+{{- with .volume }}<meta name="citation_volume" content="{{ . }}">{{ end }}
+{{- with .issn }}<meta name="citation_issn" content="{{ . }}">{{ end }}
+{{- with .url }}<meta name="citation_abstract_html_url" content="{{ . }}">{{ end }}
+{{- end }}
+{{- end -}}

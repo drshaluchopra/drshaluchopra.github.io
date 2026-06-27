@@ -1,0 +1,37 @@
+<div class="spectrum-bar"></div>
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <div class="brand-area">
+      <button class="prism-btn" type="button" aria-label="What this emblem means" aria-expanded="false" aria-controls="prism-pop">
+        <svg class="prism-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <text x="32" y="48" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="44" fill="#241F1B">S</text>
+          <g stroke="#BD6336" stroke-width="2.6" stroke-linecap="round">
+            <line x1="32" y1="15" x2="32" y2="7"/>
+            <line x1="40" y1="17" x2="45" y2="10"/>
+            <line x1="24" y1="17" x2="19" y2="10"/>
+          </g>
+        </svg>
+      </button>
+      <a class="brand" href="{{ site.Home.RelPermalink }}"><span class="brand-name">Shalu Chopra</span></a>
+      <div class="prism-pop" id="prism-pop" role="dialog" aria-label="About the emblem" hidden>
+        <p><strong>My mark.</strong> An S for Shalu that also traces a 1 and a 3, my number, rising into rays, because the work is always moving towards growth and change.</p>
+        <div class="prism-pop-keys">
+          <span>Growth</span><span>Clarity</span><span>Conviction</span>
+        </div>
+      </div>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul>
+        {{- $current := . -}}
+        {{- range site.Menus.main }}
+        <li>
+          <a href="{{ with site.GetPage .PageRef }}{{ .RelPermalink }}{{ else }}{{ .PageRef | relLangURL }}{{ end }}"{{ if $current.IsMenuCurrent "main" . }} aria-current="page" class="active"{{ end }}>{{ .Name }}</a>
+        </li>
+        {{- end }}
+      </ul>
+    </nav>
+  </div>
+</header>

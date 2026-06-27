@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="wrap footer-cta">
+    <p>For research, writing, teaching, and speaking enquiries</p>
+    <a class="footer-cta-link" href="{{ with site.GetPage "/contact" }}{{ .RelPermalink }}{{ else }}{{ "contact" | relURL }}{{ end }}">Get in touch →</a>
+  </div>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Dr. Shalu Chopra</p>
+      <p class="footer-tag">{{ site.Params.tagline }}</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        {{- range site.Menus.main }}
+        <li><a href="{{ with site.GetPage .PageRef }}{{ .RelPermalink }}{{ else }}{{ .PageRef | relLangURL }}{{ end }}">{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    <div class="footer-meta">
+      <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+      {{- with site.Params.orcid }}<a href="{{ . }}" rel="me noopener" target="_blank">ORCID</a>{{ end }}
+      {{- with site.Params.linkedin }}<a href="{{ . }}" rel="noopener" target="_blank">LinkedIn</a>{{ end }}
+      {{- with site.Params.scholar }}<a href="{{ . }}" rel="noopener" target="_blank">Scholar</a>{{ end }}
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>© {{ now.Year }} Dr. Shalu Chopra. {{ site.Params.location }}.</p>
+  </div>
+</footer>

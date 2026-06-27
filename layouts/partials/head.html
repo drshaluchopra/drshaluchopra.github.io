@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{- $title := .Title | default site.Title -}}
+{{- $isHome := .IsHome -}}
+<title>{{ if $isHome }}{{ site.Title }} · {{ site.Params.tagline }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+
+{{- $desc := .Description | default .Summary | default site.Params.description | plainify | chomp -}}
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ site.Params.author }}">
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ partial "seo.html" . }}
+
+{{- /* Fonts: Fraunces (headings) + Inter (body), self-hosted for speed & privacy (GDPR). */ -}}
+<link rel="stylesheet" href="{{ "fonts/fonts.css" | relURL }}">
+
+{{- $css := resources.Get "css/main.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text x=%2216%22 y=%2225%22 text-anchor=%22middle%22 font-family=%22Georgia, Times New Roman, serif%22 font-weight=%22700%22 font-size=%2224%22 fill=%22%23241F1B%22>S</text><g stroke=%22%23BD6336%22 stroke-width=%222%22 stroke-linecap=%22round%22><line x1=%2216%22 y1=%227%22 x2=%2216%22 y2=%222.5%22/><line x1=%2221.5%22 y1=%228.5%22 x2=%2224.5%22 y2=%225%22/><line x1=%2210.5%22 y1=%228.5%22 x2=%227.5%22 y2=%225%22/></g></svg>">

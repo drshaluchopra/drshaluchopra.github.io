@@ -1,0 +1,56 @@
+# Projects page. Two groups:
+#   featured  = Dr. Chopra's own MSc marketing/brand projects (big image cards, alternating)
+#   supervised = student projects she supervised (compact cards, grouped by strand)
+# Add a new item = append a block. Strands with no items are hidden automatically.
+
+featured:
+  name: "Marketing & Brand Projects"
+  intro: "Strategic marketing and brand projects from Dr. Chopra's MSc in International Marketing Management at Manchester Metropolitan University."
+  items:
+    - title: "Marketing Launch Campaign: Campfire x Quorn"
+      org: "Manchester Metropolitan University · Group Project"
+      description: "A strategic launch campaign for Campfire, built on the existing brand equity of Quorn. Working in a cross-functional team, Dr. Chopra helped design an integrated go-to-market strategy and present it in a simulated client-style pitch to the Campfire team."
+      contributions:
+        - "Developed a brand extension and positioning strategy for Campfire under the Quorn umbrella."
+        - "Conducted market and consumer insight analysis to identify target segments and growth opportunities."
+        - "Designed an integrated marketing mix (product, price, place, promotion) and a launch roadmap."
+        - "Created a campaign narrative and creative concept aligned with Quorn's brand values."
+        - "Delivered an in-person pitch simulating a real agency and client environment."
+      skills: "Brand strategy · Campaign planning · Consumer insight · Teamwork · Client presentation"
+      image: "images/projects/campfire-quorn.jpg"
+
+    - title: "Destination Branding Campaign: Brussels"
+      org: "Manchester Metropolitan University · Module: Branding International Places & Destinations · Group Project"
+      description: "A people-led destination branding campaign for Brussels, repositioning the city from an institutional, EU-focused image to a human, multicultural, and community-driven cultural destination. Dr. Chopra's key contribution was the core experience model and strategic framework, including the \"Fill Your Cart\" personalisation concept and the use of the ATLAS framework to put the brand strategy into action."
+      contributions:
+        - "Conceptualised \"Fill Your Cart\", a 1 to 5 day personalised cultural journey model co-created with local ambassadors."
+        - "Applied the ATLAS (Think, Listen, Act, Speak) framework to turn brand strategy into actionable destination initiatives."
+        - "Helped define Brussels' new positioning: \"The Culture Between Cultures\"."
+        - "Conducted PESTLE and SWOT analysis to justify and validate the people-led branding approach."
+        - "Designed ambassador-led experiences, neighbourhood activation, and cultural micro-experiences."
+        - "Linked the campaign to Brussels' 2030 cultural vision for long-term relevance, and delivered a professional group pitch."
+      skills: "Place branding · Destination marketing · Experience design · Strategic frameworks · Collaborative strategy"
+      image: "images/projects/brussels-branding.jpg"
+
+supervised:
+  name: "Student Projects & Campaigns"
+  intro: "Field projects and campaigns led by students under Dr. Chopra's supervision, turning communication and marketing theory into real-world practice."
+  strands:
+    - name: "Advertising Fieldwork"
+      intro: "Field exercises decoding how brands build and signal meaning."
+      items:
+        - title: "Ad Hunt"
+          tag: "Advertising"
+          description: "A field activity in which students hunt, collect, and analyse advertising in the wild to understand its strategies and intent."
+        - title: "A Walk to the Mall"
+          tag: "Brand analysis"
+          description: "A field study analysing brand typography and brand intent, reading how brands communicate meaning through design."
+
+    - name: "Development Communication: Social-Change Campaigns"
+      intro: "In the Development Communication module, the goal is real societal change. Dr. Chopra guides her students to design and run field campaigns in the communities that need development most, turning theory into action."
+      items:
+        - title: "7 Kadam (Seven Steps)"
+          tag: "Education access"
+          description: "A social-impact campaign supporting children from economically weaker sections who still lack access to quality education, despite government schemes. Over seven consecutive days, Dr. Chopra's students gave free lessons in English, Mathematics, and Hindi, teaching children at times that suited them, morning or night, to strengthen their basic academic skills. The sessions were documented and shared as an online campaign to inspire wider community involvement."
+          outcome: "Reached over 60,000 accounts across digital platforms, driving strong engagement and showing how small, consistent efforts can create real educational opportunities for underserved children."
+          url: "https://www.instagram.com/7_kadam"

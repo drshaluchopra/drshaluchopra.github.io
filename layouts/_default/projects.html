@@ -1,0 +1,78 @@
+{{ define "main" }}
+{{ $p := hugo.Data.projects }}
+<article class="page">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{{ .Params.eyebrow | default "Projects" }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.lede }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </header>
+
+  <div class="wrap prose">{{ .Content }}</div>
+
+  {{/* Group 1: Dr. Chopra's own marketing/brand projects — feature cards */}}
+  {{ with $p.featured }}
+  <section class="wrap project-section">
+    <div class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>{{ .name }}</h2>
+      {{ with .intro }}<p class="strand-intro">{{ . }}</p>{{ end }}
+    </div>
+    <div class="feature-list">
+      {{ range .items }}
+      {{ $title := .title }}
+      <div class="feature-card">
+        {{ with .image }}{{ $img := resources.Get . }}{{ with $img }}<div class="project-img"><img src="{{ (.Resize "680x q82").RelPermalink }}" alt="{{ $title }}" loading="lazy"></div>{{ end }}{{ end }}
+        <div class="project-body">
+          <h3>{{ .title }}</h3>
+          {{ with .org }}<p class="meta">{{ . }}</p>{{ end }}
+          <p class="project-desc">{{ .description }}</p>
+          {{ with .skills }}<p class="project-skills">{{ range split . " · " }}<span class="skill-chip">{{ . }}</span>{{ end }}</p>{{ end }}
+          {{ with .contributions }}
+          <details class="proj-more">
+            <summary>Key contributions</summary>
+            <ul class="project-points">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+          </details>
+          {{ end }}
+          {{ with .url }}<a class="project-link" href="{{ . }}" target="_blank" rel="noopener">View project →</a>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Group 2: student projects supervised — compact cards by strand */}}
+  {{ with $p.supervised }}
+  <section class="wrap project-section band-divider">
+    <div class="section-head">
+      <p class="eyebrow">Teaching & mentoring</p>
+      <h2>{{ .name }}</h2>
+      {{ with .intro }}<p class="strand-intro">{{ . }}</p>{{ end }}
+    </div>
+    {{ range .strands }}
+    {{ if .items }}
+    <div class="strand">
+      <h3 class="strand-head">{{ .name }}</h3>
+      {{ with .intro }}<p class="strand-sub">{{ . }}</p>{{ end }}
+      <ul class="card-grid">
+        {{ range .items }}
+        <li class="mini-card">
+          <div class="mini-tile">{{ with .tag }}<span>{{ . }}</span>{{ end }}</div>
+          <div class="mini-body">
+            <h4>{{ .title }}</h4>
+            <p>{{ .description }}</p>
+            {{ with .outcome }}<p class="outcome"><strong>Outcome:</strong> {{ . }}</p>{{ end }}
+            {{ with .url }}<a class="project-link" href="{{ . }}" target="_blank" rel="noopener">View campaign →</a>{{ end }}
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
+  </section>
+  {{ end }}
+</article>
+{{ end }}

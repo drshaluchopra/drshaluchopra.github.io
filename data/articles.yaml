@@ -1,0 +1,64 @@
+# Prism column & other public writing. Newest first. Add an entry = append a block.
+# theme groups the article on the Writing page; topic is the small chip shown on each card.
+- title: "You Finally Got There. Then You Started Looking for Somewhere Else to Be."
+  outlet: "Prism · The Present Minds"
+  date: 2026-06-20
+  url: "https://thepresentminds.org/why-success-feels-empty/"
+  image: "images/articles/why-success-feels-empty.jpg"
+  theme: "Life & Reflection"
+  topic: "Reflection"
+  blurb: "On the restlessness that follows achievement, and why arriving rarely feels like enough."
+
+- title: "I Left My Doctorate and Six Years of Teaching. Here Is What That Actually Cost."
+  outlet: "Prism · The Present Minds"
+  date: 2026-06-03
+  url: "https://thepresentminds.org/leaving-academia-identity-after-phd/"
+  image: "images/articles/leaving-academia-identity-after-phd.jpg"
+  theme: "Life & Reflection"
+  topic: "Academia"
+  blurb: "A personal reckoning with identity after a PhD and six years in the classroom."
+
+- title: "Are You Outsourcing Your Thinking? Here Is What You Lose When You Do."
+  outlet: "Prism · The Present Minds"
+  date: 2026-05-20
+  url: "https://thepresentminds.org/outsourcing-your-thinking-ai/"
+  image: "images/articles/outsourcing-your-thinking-ai.jpg"
+  theme: "Media, Technology & Society"
+  topic: "AI & Thinking"
+  blurb: "On AI tools and the quiet cost of letting them think for us."
+
+- title: "Before You Post: The Wall Social Media Built in Your Mind"
+  outlet: "Prism · The Present Minds"
+  date: 2026-05-01
+  url: "https://thepresentminds.org/before-you-post-decision-wall-social-media/"
+  image: "images/articles/before-you-post-decision-wall-social-media.jpg"
+  theme: "Media, Technology & Society"
+  topic: "Social Media"
+  blurb: "How social media shapes the decisions we make before we ever hit share."
+
+- title: "When Stories Do the Work That Advertising Never Could"
+  outlet: "Prism · The Present Minds"
+  date: 2026-04-06
+  url: "https://thepresentminds.org/marketing-as-a-catalyst-for-social-change/"
+  image: "images/articles/marketing-as-a-catalyst-for-social-change.jpg"
+  theme: "Marketing & Storytelling"
+  topic: "Storytelling"
+  blurb: "Storytelling as a force for shifting perception and driving social change."
+
+- title: "The Invisible Side of Marketing"
+  outlet: "Prism · The Present Minds"
+  date: 2026-03-30
+  url: "https://thepresentminds.org/how-subtle-marketing-influence-shapes-consumer-choices/"
+  image: "images/articles/how-subtle-marketing-influence-shapes-consumer-choices.jpg"
+  theme: "Marketing & Storytelling"
+  topic: "Marketing"
+  blurb: "The subtle nudges that shape what we buy without our noticing."
+
+- title: "How the Shows You Watch Are Quietly Teaching You Marketing"
+  outlet: "Prism · The Present Minds"
+  date: 2026-03-19
+  url: "https://thepresentminds.org/marketing-lessons-from-tv-shows/"
+  image: "images/articles/marketing-lessons-from-tv-shows.jpg"
+  theme: "Marketing & Storytelling"
+  topic: "Media & Marketing"
+  blurb: "The marketing lessons hidden inside the television we watch for fun."

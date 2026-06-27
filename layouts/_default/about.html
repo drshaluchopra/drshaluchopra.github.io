@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ $photo := resources.Get "images/about.jpg" }}
+<article class="page">
+  <header class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">{{ .Params.eyebrow | default "About" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+  </header>
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      {{ with $photo }}
+      {{ $img := .Resize "560x q85" }}
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="Dr. Shalu Chopra" loading="lazy">
+      {{ end }}
+      <div class="about-quickfacts">
+        <p><strong>Based in</strong><br>{{ site.Params.location }}</p>
+        <p><strong>ORCID</strong><br><a href="{{ site.Params.orcid }}" target="_blank" rel="noopener">0000-0002-2493-8621</a></p>
+        <p><a class="btn btn-outline btn-sm" href="{{ "cv/" | relURL }}">View CV →</a></p>
+      </div>
+    </div>
+    <div class="prose about-body">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}
