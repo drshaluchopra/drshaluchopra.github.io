@@ -14,3 +14,9 @@ rules.md
 CONTENT_INTAKE.md
 DESIGN.md
 BOOK_COVER_BRIEF.md
+
+# Deploy tooling (internal)
+publish.sh
+
+# Deploy workflow — commit only after `gh auth refresh -s workflow`
+.github/workflows/hugo.yml

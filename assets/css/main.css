@@ -384,3 +384,67 @@ img{max-width:100%; height:auto; display:block}
   .stats .wrap{grid-template-columns:repeat(2,1fr);gap:24px 18px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.has-js .reveal{opacity:1;transform:none}}
+
+/* =====================================================================
+   Refinement pass — polish within the warm-minimal identity
+   (1) hero depth + entrance  (2) micro-interactions/motion
+   (3) signature spectrum motif  (4) palette enrichment
+   ===================================================================== */
+:root{ --cocoa:#33271F; }
+
+/* (1) Hero — a warm wash gives depth without changing the feel */
+.hero{position:relative; background:linear-gradient(180deg,#F6ECDD 0%,#FBF4EA 38%,#FFFFFF 80%)}
+.hero-photo::before{transition:transform .55s ease}
+.hero-photo:hover::before{transform:translate(12px,12px)}
+/* Gentle staggered entrance for the hero copy (progressive; disabled w/ reduced-motion) */
+.hero-text>h1,.hero-text>.hero-statement,.hero-text>.hero-tagline,.hero-text>.hero-cta{
+  opacity:0; transform:translateY(10px); animation:heroIn .7s cubic-bezier(.22,.61,.36,1) forwards}
+.hero-text>.hero-statement{animation-delay:.10s}
+.hero-text>.hero-tagline{animation-delay:.20s}
+.hero-text>.hero-cta{animation-delay:.30s}
+@keyframes heroIn{to{opacity:1; transform:none}}
+
+/* (2) Micro-interactions — buttons lift, cards lift, links draw an underline */
+.btn{transition:transform .18s ease,background .15s ease,border-color .15s ease,box-shadow .18s ease,color .15s ease}
+.btn-primary{box-shadow:0 1px 2px rgba(154,77,39,.18)}
+.btn-primary:hover{transform:translateY(-1px); box-shadow:0 7px 18px rgba(154,77,39,.26)}
+.btn-outline:hover{transform:translateY(-1px)}
+.article-card,.feature-card,.mini-card{
+  box-shadow:0 1px 3px rgba(36,31,27,.06);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.article-card:hover,.feature-card:hover,.mini-card:hover{
+  transform:translateY(-3px); box-shadow:0 12px 30px rgba(36,31,27,.10); border-color:#E0D5C7}
+/* Animated underline for reading links (prose + contact + research note) */
+.prose a,.contact-direct a,.thesis-meta a{
+  background-image:linear-gradient(var(--accent),var(--accent));
+  background-size:0% 1.5px; background-repeat:no-repeat; background-position:0 100%;
+  transition:background-size .25s ease, color .15s ease; text-decoration:none}
+.prose a:hover,.contact-direct a:hover,.thesis-meta a:hover{background-size:100% 1.5px; text-decoration:none}
+/* "→" follow links: nudge on hover */
+.section-more a,.read-more,.project-link,.cv-download a{transition:color .15s ease, letter-spacing .15s ease}
+.section-more a:hover,.article-card a:hover .read-more{letter-spacing:.01em}
+
+/* (3) Signature spectrum motif — active nav + section heads carry the prism */
+.site-nav a{position:relative}
+.site-nav a:not(.active)::after{content:""; position:absolute; left:0; right:0; bottom:-3px; height:2px;
+  background:var(--accent); border-radius:2px; transform:scaleX(0); transform-origin:left; transition:transform .2s ease}
+.site-nav a:not(.active):hover::after{transform:scaleX(1)}
+.site-nav a.active{border-bottom:0}
+.site-nav a.active::after{content:""; position:absolute; left:0; right:0; bottom:-3px; height:2px;
+  background:var(--spectrum); border-radius:2px}
+/* Subtle dividers between credibility numbers (desktop) */
+@media (min-width:821px){
+  .stats .stat + .stat::before{content:""; position:absolute; left:-9px; top:50%; transform:translateY(-50%);
+    height:34px; width:1px; background:var(--line)}
+  .stat{position:relative}
+}
+
+/* (4) Palette enrichment — warm-cream section for rhythm; cocoa for depth detail */
+.site-footer{position:relative; background:linear-gradient(180deg,var(--cocoa) 0%,var(--ink) 70%)}
+/* spectrum signature line at the top of the footer (mirrors the top bar) */
+.site-footer::before{content:""; position:absolute; top:0; left:0; right:0; height:4px; background:var(--spectrum)}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-text>*{animation:none!important; opacity:1!important; transform:none!important}
+  .btn:hover,.article-card:hover,.feature-card:hover,.mini-card:hover{transform:none!important}
+}
