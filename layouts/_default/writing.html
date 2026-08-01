@@ -17,13 +17,16 @@
 
   {{/* Featured latest piece */}}
   <section class="wrap">
-    <a class="article-feature" href="{{ $featured.url }}" target="_blank" rel="noopener">
-      <p class="feature-label">Latest piece</p>
-      {{ with $featured.topic }}<span class="topic-chip">{{ . }}</span>{{ end }}
-      <h2>{{ $featured.title }}</h2>
-      <p class="meta">{{ $featured.outlet }} · {{ dateFormat "2 Jan 2006" $featured.date }}</p>
-      <p class="blurb">{{ $featured.blurb }}</p>
-      <span class="read-more">Read on The Present Minds →</span>
+    <a class="article-feature{{ if $featured.image }} has-img{{ end }}" href="{{ $featured.url }}" target="_blank" rel="noopener">
+      {{ with $featured.image }}{{ $img := resources.Get . }}{{ with $img }}<div class="feature-img"><img src="{{ (.Resize "900x q82").RelPermalink }}" alt="" loading="lazy"></div>{{ end }}{{ end }}
+      <div class="feature-body">
+        <p class="feature-label">Latest piece</p>
+        {{ with $featured.topic }}<span class="topic-chip">{{ . }}</span>{{ end }}
+        <h2>{{ $featured.title }}</h2>
+        <p class="meta">{{ $featured.outlet }} · {{ dateFormat "2 Jan 2006" $featured.date }}</p>
+        <p class="blurb">{{ $featured.blurb }}</p>
+        <span class="read-more">Read on The Present Minds →</span>
+      </div>
     </a>
   </section>
 
@@ -39,10 +42,13 @@
         {{ range . }}
         <li class="article-item">
           <a href="{{ .url }}" target="_blank" rel="noopener">
-            <p class="meta">{{ with .topic }}<span class="topic-chip topic-chip-sm">{{ . }}</span>{{ end }} {{ .outlet }} · {{ dateFormat "2 Jan 2006" .date }}</p>
-            <h3>{{ .title }}</h3>
-            <p class="blurb">{{ .blurb }}</p>
-            <span class="read-more">Read on The Present Minds →</span>
+            {{ with .image }}{{ $img := resources.Get . }}{{ with $img }}<div class="ai-thumb"><img src="{{ (.Resize "260x q80").RelPermalink }}" alt="" loading="lazy"></div>{{ end }}{{ end }}
+            <div class="ai-text">
+              <p class="meta">{{ with .topic }}<span class="topic-chip topic-chip-sm">{{ . }}</span>{{ end }} {{ .outlet }} · {{ dateFormat "2 Jan 2006" .date }}</p>
+              <h3>{{ .title }}</h3>
+              <p class="blurb">{{ .blurb }}</p>
+              <span class="read-more">Read on The Present Minds →</span>
+            </div>
           </a>
         </li>
         {{ end }}
