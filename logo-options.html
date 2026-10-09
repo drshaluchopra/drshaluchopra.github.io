@@ -1,0 +1,51 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logo options</title>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  body{margin:0;background:#FAF5EE;font-family:Inter,system-ui,sans-serif;color:#241F1B;padding:34px}
+  h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:22px;margin:0 0 6px}
+  .sub{color:#6B6259;font-size:14px;margin:0 0 28px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1040px}
+  .opt{background:#fff;border:1px solid #EBE3D8;border-radius:14px;padding:22px 20px;text-align:center}
+  .mark{height:96px;display:flex;align-items:center;justify-content:center}
+  .mark svg{width:84px;height:84px}
+  .nav{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid #F0EAE0}
+  .nav svg{width:22px;height:22px;flex:none}
+  .nav b{font-family:"Fraunces",Georgia,serif;font-weight:700;font-size:18px}
+  .opt p{margin:14px 0 0;font-size:12.5px;color:#6B6259;letter-spacing:.03em}
+  .num{font-weight:600;color:#BD6336}
+  @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+<h1>Shalu Chopra — logo options</h1>
+<p class="sub">Same mark shown large, and at nav size beside the name. Tell me a number.</p>
+<div class="grid" id="grid"></div>
+<script>
+var S='Fraunces, Georgia, serif';
+function svg(inner){return '<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">'+inner+'</svg>';}
+var marks=[
+ {n:'1', label:'Serif S in a ring (seal)', svg:svg(
+   '<circle cx="32" cy="32" r="28" fill="none" stroke="#241F1B" stroke-width="2.5"/>'+
+   '<circle cx="54" cy="20" r="3.4" fill="#BD6336"/>'+
+   '<text x="32" y="45" text-anchor="middle" font-family="'+S+'" font-weight="600" font-size="40" fill="#241F1B">S</text>')},
+ {n:'2', label:'Ink disc, cream S', svg:svg(
+   '<circle cx="32" cy="32" r="29" fill="#241F1B"/>'+
+   '<text x="32" y="45" text-anchor="middle" font-family="'+S+'" font-weight="600" font-size="40" fill="#FBF5EA">S</text>')},
+ {n:'3', label:'Terracotta tile, S', svg:svg(
+   '<rect x="6" y="6" width="52" height="52" rx="14" fill="#BD6336"/>'+
+   '<text x="32" y="45" text-anchor="middle" font-family="'+S+'" font-weight="600" font-size="38" fill="#FBF5EA">S</text>')},
+ {n:'4', label:'S with a spark', svg:svg(
+   '<text x="30" y="46" text-anchor="middle" font-family="'+S+'" font-weight="600" font-size="46" fill="#241F1B">S</text>'+
+   '<g stroke="#BD6336" stroke-width="2.4" stroke-linecap="round"><line x1="50" y1="14" x2="50" y2="24"/><line x1="45" y1="19" x2="55" y2="19"/></g>')},
+ {n:'5', label:'SC monogram', svg:svg(
+   '<text x="22" y="45" text-anchor="middle" font-family="'+S+'" font-weight="600" font-size="42" fill="#241F1B">S</text>'+
+   '<text x="42" y="45" text-anchor="middle" font-family="'+S+'" font-weight="600" font-size="42" fill="#BD6336">C</text>')},
+ {n:'6', label:'S with terracotta full stop', svg:svg(
+   '<text x="28" y="45" text-anchor="middle" font-family="'+S+'" font-weight="600" font-size="44" fill="#241F1B">S</text>'+
+   '<circle cx="48" cy="42" r="4" fill="#BD6336"/>')}
+];
+document.getElementById('grid').innerHTML=marks.map(function(m){
+  return '<div class="opt"><div class="mark">'+m.svg+'</div>'+
+         '<div class="nav">'+m.svg+'<b>Shalu Chopra</b></div>'+
+         '<p><span class="num">'+m.n+'</span> &nbsp;'+m.label+'</p></div>';
+}).join('');
+</script></body></html>
