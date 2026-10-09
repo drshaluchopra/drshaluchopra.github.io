@@ -3,7 +3,7 @@ title: "Manipulative Realities"
 layout: "single"
 eyebrow: "The Book"
 lede: "Viral Propaganda of Digital Deception"
-description: "Manipulative Realities: Viral Propaganda of Digital Deception. A research-led book by Dr. Shalu Chopra on how fake viral videos and deepfakes are reshaping public life, built on original primary research across three generations, fifteen case studies, and interviews with senior journalists."
+description: "Manipulative Realities: Viral Propaganda of Digital Deception. A research-led book by Dr. Shalu Chopra on how fake viral videos and deepfakes are reshaping public life, built on original primary research across three generations, verified cases from India and Britain, and interviews with media professionals."
 ---
 
 <div class="book-hero">
@@ -51,15 +51,17 @@ explains how we reached this point, and why **media literacy** has become a basi
 This is a book built on evidence, not opinion. Its foundation is rare for a work written for a
 general audience:
 
-- A survey of **470 respondents** across three generations, covering how each group consumes,
+- A survey of **476 respondents** across three generations, covering how each group consumes,
   trusts, and shares viral video.
-- **Fifteen documented case studies** of fake viral videos, each traced from origin to
-  real-world impact.
-- In-depth interviews with **five senior working journalists** on credibility, gatekeeping,
-  and verification.
+- **Verified cases from India and Britain, 2019 to 2026**, across politics, religion, and
+  entertainment, each traced from origin to real-world impact.
+- In-depth interviews with **nine media professionals, educators, and a policy consultant** on
+  credibility, gatekeeping, and verification.
 
-Its central finding is stark: across every generation, almost no one checks whether a video is
-true before sharing it. The book reads that finding through a clear analytical lens, treating
+Its central finding is stark: credibility barely enters the decision to share. People forward
+what entertains them, confirms what they already believe, or simply does not irritate them. The
+finished manuscript runs to about 67,000 words across eleven chapters, with forty original
+diagrams. The book reads that finding through a clear analytical lens, treating
 propaganda not as the act of a single bad actor, but as a property of the network itself.
 
 ### Who it's for
